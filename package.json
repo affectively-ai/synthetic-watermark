@@ -1,0 +1,58 @@
+{
+  "name": "@affectively/synthetic-watermark",
+  "version": "1.0.0",
+  "description": "Invisible watermarking for AI-generated content. Embeds synthetic origin markers into PNG images (iTXt chunks) and MP3 audio (ID3v2 tags) for authenticity verification.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "npm run build",
+    "test": "bun test"
+  },
+  "keywords": [
+    "watermark",
+    "ai-generated",
+    "synthetic",
+    "authenticity",
+    "png",
+    "mp3",
+    "id3",
+    "metadata",
+    "ai-safety",
+    "content-authenticity",
+    "digital-watermark",
+    "steganography"
+  ],
+  "author": "AFFECTIVELY <opensource@affectively.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/affectively-ai/synthetic-watermark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/affectively-ai/synthetic-watermark/issues"
+  },
+  "homepage": "https://github.com/affectively-ai/synthetic-watermark#readme",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
