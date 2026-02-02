@@ -150,7 +150,7 @@ function getID3TagSize(audioBuffer: Uint8Array): number {
 export function embedAudioWatermark(
   audioBuffer: Buffer,
   format: string = 'mp3',
-  config: Partial<WatermarkConfig> = {}
+  config: Partial<WatermarkConfig> = {},
 ): Buffer {
   const fullConfig: WatermarkConfig = {
     ...DEFAULT_WATERMARK,
@@ -193,7 +193,7 @@ export function embedAudioWatermark(
  * @returns Watermark info if found, null otherwise
  */
 export function detectSyntheticWatermark(
-  audioBuffer: Buffer
+  audioBuffer: Buffer,
 ): WatermarkConfig | null {
   const bufferArray = new Uint8Array(audioBuffer);
   if (!hasID3Tag(bufferArray)) {
@@ -245,7 +245,7 @@ export function detectSyntheticWatermark(
 export function watermarkDigitalTwinAudio(
   audioBuffer: Buffer,
   format = 'mp3',
-  userIdHash?: string
+  userIdHash?: string,
 ): Buffer {
   return embedAudioWatermark(audioBuffer, format, {
     source: 'digital_twin',
@@ -258,7 +258,7 @@ export function watermarkDigitalTwinAudio(
  */
 export function watermarkHologramAudio(
   audioBuffer: Buffer,
-  format = 'mp3'
+  format = 'mp3',
 ): Buffer {
   return embedAudioWatermark(audioBuffer, format, {
     source: 'hologram',
@@ -270,7 +270,7 @@ export function watermarkHologramAudio(
  */
 export function watermarkCyranoAudio(
   audioBuffer: Buffer,
-  format = 'mp3'
+  format = 'mp3',
 ): Buffer {
   return embedAudioWatermark(audioBuffer, format, {
     source: 'cyrano',
