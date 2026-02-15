@@ -173,7 +173,7 @@ function findIENDPosition(buffer: Uint8Array): number {
 export function embedImageWatermark(
   imageBuffer: Uint8Array,
   format: string = 'png',
-  config: Partial<ImageWatermarkConfig> = {},
+  config: Partial<ImageWatermarkConfig> = {}
 ): Buffer {
   const fullConfig: ImageWatermarkConfig = {
     ...DEFAULT_WATERMARK,
@@ -226,7 +226,7 @@ export function embedImageWatermark(
  * @returns Watermark info if found, null otherwise
  */
 export function detectSyntheticImageWatermark(
-  imageBuffer: Buffer,
+  imageBuffer: Buffer
 ): ImageWatermarkConfig | null {
   const bufferArray = new Uint8Array(imageBuffer);
   if (!isPNG(bufferArray) || imageBuffer.length < 20) {
@@ -288,7 +288,7 @@ export function detectSyntheticImageWatermark(
 export function watermarkDallEImage(
   imageBuffer: Uint8Array,
   format: string = 'png',
-  userIdHash?: string,
+  userIdHash?: string
 ): Buffer {
   return embedImageWatermark(imageBuffer, format, {
     source: 'dalle',
@@ -303,7 +303,7 @@ export function watermarkDallEImage(
 export function watermarkGeminiImage(
   imageBuffer: Uint8Array,
   format: string = 'png',
-  userIdHash?: string,
+  userIdHash?: string
 ): Buffer {
   return embedImageWatermark(imageBuffer, format, {
     source: 'gemini',
@@ -318,7 +318,7 @@ export function watermarkGeminiImage(
 export function watermarkDigitalTwinImage(
   imageBuffer: Uint8Array,
   format: string = 'png',
-  userIdHash?: string,
+  userIdHash?: string
 ): Buffer {
   return embedImageWatermark(imageBuffer, format, {
     source: 'digital_twin',
@@ -332,7 +332,7 @@ export function watermarkDigitalTwinImage(
 export function watermarkCyranoImage(
   imageBuffer: Uint8Array,
   format: string = 'png',
-  userIdHash?: string,
+  userIdHash?: string
 ): Buffer {
   return embedImageWatermark(imageBuffer, format, {
     source: 'cyrano',
